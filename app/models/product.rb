@@ -7,6 +7,8 @@ validates :name, presence: true, uniqueness: true
   validates :price, presence: true, numericality: { greater_than_or_equal_to: 0 }
 
 
+  default_scope {order(name: :asc)}
+
   before_save :say_before_save
   after_create :say_after_create
 
