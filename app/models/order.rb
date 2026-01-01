@@ -18,4 +18,6 @@ class Order < ApplicationRecord
   def say_after_update
     puts "Order #{id} was just updated!"
   end
+
+  scope :high_value, -> {where("total > 1000")}
 end
