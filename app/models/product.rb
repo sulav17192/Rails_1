@@ -19,4 +19,8 @@ validates :name, presence: true, uniqueness: true
   def say_after_create
     puts" Product was created successfully"
   end
+
+   scope :expensive, -> {where("price > 1000")}
+   scope :cheap, -> {where("price< 500")}
+
 end
